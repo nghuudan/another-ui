@@ -19,6 +19,14 @@ export const Example = () => (
     </Column>
     <Column md={4} lg={6} xl={8}>
       <p>Column</p>
+      <Row gutters>
+        <Column sm={6}>
+          <p>Nested Column</p>
+        </Column>
+        <Column sm={6}>
+          <p>Nested Column</p>
+        </Column>
+      </Row>
     </Column>
   </Row>
 );
