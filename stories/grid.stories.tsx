@@ -1,5 +1,5 @@
 import React from 'react';
-import { Column, Row } from '../packages/grid/lib';
+import { Column, ColumnSize, Row } from '../packages/grid/lib';
 import './stories.scss';
 
 export const Default = () => (
@@ -90,6 +90,40 @@ export const NestedRows = () => (
     </Column>
   </Row>
 );
+
+export const TryItOut = ({
+  columnOne,
+  columnTwo,
+  columnThree,
+  gutters,
+  margins,
+}: {
+  columnOne: ColumnSize,
+  columnTwo: ColumnSize,
+  columnThree: ColumnSize,
+  gutters: boolean,
+  margins: boolean,
+}) => (
+  <Row gutters={gutters} margins={margins}>
+    <Column sm={columnOne}>
+      <p className="column-example">Column</p>
+    </Column>
+    <Column sm={columnTwo}>
+      <p className="column-example">Column</p>
+    </Column>
+    <Column sm={columnThree}>
+      <p className="column-example">Column</p>
+    </Column>
+  </Row>
+);
+
+TryItOut.args = {
+  columnOne: 3,
+  columnTwo: 4,
+  columnThree: 5,
+  gutters: false,
+  margins: false,
+};
 
 export default {
   title: 'Layout/Grid',
