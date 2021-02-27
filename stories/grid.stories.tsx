@@ -2,6 +2,20 @@ import React from 'react';
 import { Column, Row } from '../packages/grid/lib';
 import './stories.scss';
 
+export const Default = () => (
+  <Row>
+    <Column sm={6} md={4} lg={3}>
+      <p className="column-example">Column</p>
+    </Column>
+    <Column sm={6} md={4} lg={3}>
+      <p className="column-example">Column</p>
+    </Column>
+    <Column md={4} lg={6}>
+      <p className="column-example">Column</p>
+    </Column>
+  </Row>
+);
+
 export const Gutters = () => (
   <Row gutters>
     <Column sm={6} md={4}>
