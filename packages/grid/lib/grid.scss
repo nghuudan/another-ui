@@ -1,0 +1,64 @@
+$aui-breakpoint-md: 768px;
+$aui-breakpoint-lg: 1024px;
+$aui-breakpoint-xl: 1280px;
+
+@mixin aui-create-column($size) {
+  @for $i from 1 through 12 {
+    .aui-col-#{$size}-#{$i} {
+      width: $i * (100% / 12);
+    }
+  }
+}
+
+@mixin aui-breakpoint($width) {
+  @media screen and (min-width: $width) {
+    @content
+  }
+}
+
+.aui-row {
+  align-items: flex-start;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.aui-row-gutters {
+  margin-left: -1rem;
+
+  > .aui-column {
+    padding-left: 1rem;
+  }
+}
+
+.aui-row-margins {
+  padding: 0 1rem;
+}
+
+.aui-column {
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  max-width: 100%;
+  overflow: hidden;
+  width: 100%;
+}
+
+@include aui-create-column(sm);
+
+@include aui-breakpoint($aui-breakpoint-md) {
+  @include aui-create-column(md);
+
+  .aui-row-margins {
+    padding: 0 4rem;
+  }
+}
+
+@include aui-breakpoint($aui-breakpoint-lg) {
+  @include aui-create-column(lg);
+}
+
+@include aui-breakpoint($aui-breakpoint-xl) {
+  @include aui-create-column(xl);
+}
