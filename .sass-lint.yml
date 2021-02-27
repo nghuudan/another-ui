@@ -1,2 +1,4 @@
 files:
-  include: 'packages/**/*.scss'
+  include:
+    - 'packages/**/*.scss'
+    - 'stories/**/*.scss'
