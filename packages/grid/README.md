@@ -1,11 +1,25 @@
 # `@another-ui/grid`
 
-> TODO: description
+Just another component for grid layouts
 
 ## Usage
 
-```
-const grid = require('@another-ui/grid');
+```js
+import React from 'react';
+import { Column, Row } from '@another-ui/grid';
+import '@another-ui/grid/dist/grid.css';
 
-// TODO: DEMONSTRATE API
+export const Example = () => (
+  <Row gutters margins>
+    <Column sm={6} md={4} lg={3} xl={2}>
+      <p>Column</p>
+    </Column>
+    <Column sm={6} md={4} lg={3} xl={2}>
+      <p>Column</p>
+    </Column>
+    <Column md={4} lg={6} xl={8}>
+      <p>Column</p>
+    </Column>
+  </Row>
+);
 ```
