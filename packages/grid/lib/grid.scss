@@ -10,6 +10,14 @@ $aui-breakpoint-xl: 1280px;
   }
 }
 
+@mixin aui-create-column-offset($size) {
+  @for $i from 1 through 12 {
+    .aui-col-#{$size}-offset-#{$i} {
+      margin-left: $i * (100% / 12);
+    }
+  }
+}
+
 @mixin aui-breakpoint($width) {
   @media screen and (min-width: $width) {
     @content
@@ -46,9 +54,11 @@ $aui-breakpoint-xl: 1280px;
 }
 
 @include aui-create-column(sm);
+@include aui-create-column-offset(sm);
 
 @include aui-breakpoint($aui-breakpoint-md) {
   @include aui-create-column(md);
+  @include aui-create-column-offset(md);
 
   .aui-row-margins {
     padding: 0 4rem;
@@ -57,8 +67,10 @@ $aui-breakpoint-xl: 1280px;
 
 @include aui-breakpoint($aui-breakpoint-lg) {
   @include aui-create-column(lg);
+  @include aui-create-column-offset(lg);
 }
 
 @include aui-breakpoint($aui-breakpoint-xl) {
   @include aui-create-column(xl);
+  @include aui-create-column-offset(xl);
 }

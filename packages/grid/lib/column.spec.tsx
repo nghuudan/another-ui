@@ -32,4 +32,24 @@ describe('Column', () => {
     const { container } = render(<Column xl={6} />);
     expect(container.firstChild).toHaveClass('aui-col-xl-6');
   });
+
+  it('should have class name for sm offset column size', () => {
+    const { container } = render(<Column smOffset={7} />);
+    expect(container.firstChild).toHaveClass('aui-col-sm-offset-7');
+  });
+
+  it('should have class name for md offset column size', () => {
+    const { container } = render(<Column mdOffset={8} />);
+    expect(container.firstChild).toHaveClass('aui-col-md-offset-8');
+  });
+
+  it('should have class name for lg offset column size', () => {
+    const { container } = render(<Column lgOffset={9} />);
+    expect(container.firstChild).toHaveClass('aui-col-lg-offset-9');
+  });
+
+  it('should have class name for xl offset column size', () => {
+    const { container } = render(<Column xlOffset={10} />);
+    expect(container.firstChild).toHaveClass('aui-col-xl-offset-10');
+  });
 });

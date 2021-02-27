@@ -15,6 +15,14 @@ export interface ColumnProps {
   lg?: ColumnSize;
   /** Sets the column size for extra large devices */
   xl?: ColumnSize;
+  /** Sets the offset before the column for small devices */
+  smOffset?: ColumnSize;
+  /** Sets the offset before the column for medium devices */
+  mdOffset?: ColumnSize;
+  /** Sets the offset before the column for large devices */
+  lgOffset?: ColumnSize;
+  /** Sets the offset before the column for extra large devices */
+  xlOffset?: ColumnSize;
 }
 
 export const Column = ({
@@ -24,6 +32,10 @@ export const Column = ({
   md,
   lg,
   xl,
+  smOffset,
+  mdOffset,
+  lgOffset,
+  xlOffset,
 }: ColumnProps) => {
   const cls = ['aui-column'];
   if (className) cls.push(className);
@@ -31,6 +43,10 @@ export const Column = ({
   if (md) cls.push(`aui-col-md-${md}`);
   if (lg) cls.push(`aui-col-lg-${lg}`);
   if (xl) cls.push(`aui-col-xl-${xl}`);
+  if (smOffset) cls.push(`aui-col-sm-offset-${smOffset}`);
+  if (mdOffset) cls.push(`aui-col-md-offset-${mdOffset}`);
+  if (lgOffset) cls.push(`aui-col-lg-offset-${lgOffset}`);
+  if (xlOffset) cls.push(`aui-col-xl-offset-${xlOffset}`);
   return <div className={cls.join(' ')}>{children}</div>;
 };
 

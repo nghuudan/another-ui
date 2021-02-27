@@ -91,36 +91,62 @@ export const NestedRows = () => (
   </Row>
 );
 
+export const OffsetColumns = () => (
+  <Row gutters margins>
+    <Column sm={6}>
+      <p className="column-example">Column</p>
+    </Column>
+    <Column sm={6}>
+      <p className="column-example">Column</p>
+    </Column>
+    <Column sm={4} smOffset={4}>
+      <p className="column-example">Column</p>
+    </Column>
+    <Column sm={4}>
+      <p className="column-example">Column</p>
+    </Column>
+  </Row>
+);
+
 export const TryItOut = ({
   columnOne,
   columnTwo,
   columnThree,
+  columnOneOffset,
+  columnTwoOffset,
+  columnThreeOffset,
   gutters,
   margins,
 }: {
   columnOne: ColumnSize,
   columnTwo: ColumnSize,
   columnThree: ColumnSize,
+  columnOneOffset: ColumnSize,
+  columnTwoOffset: ColumnSize,
+  columnThreeOffset: ColumnSize,
   gutters: boolean,
   margins: boolean,
 }) => (
   <Row gutters={gutters} margins={margins}>
-    <Column sm={columnOne}>
+    <Column sm={columnOne} smOffset={columnOneOffset}>
       <p className="column-example">Column</p>
     </Column>
-    <Column sm={columnTwo}>
+    <Column sm={columnTwo} smOffset={columnTwoOffset}>
       <p className="column-example">Column</p>
     </Column>
-    <Column sm={columnThree}>
+    <Column sm={columnThree} smOffset={columnThreeOffset}>
       <p className="column-example">Column</p>
     </Column>
   </Row>
 );
 
 TryItOut.args = {
-  columnOne: 3,
-  columnTwo: 4,
-  columnThree: 5,
+  columnOne: 6,
+  columnTwo: 6,
+  columnThree: 8,
+  columnOneOffset: 0,
+  columnTwoOffset: 0,
+  columnThreeOffset: 4,
   gutters: false,
   margins: false,
 };

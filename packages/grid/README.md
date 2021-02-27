@@ -23,8 +23,8 @@ export const Example = () => (
         <Column sm={6}>
           <p>Nested Column</p>
         </Column>
-        <Column sm={6}>
-          <p>Nested Column</p>
+        <Column sm={6} smOffset={6}>
+          <p>Nested Column with Offset</p>
         </Column>
       </Row>
     </Column>
