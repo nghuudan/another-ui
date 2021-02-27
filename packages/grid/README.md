@@ -1,6 +1,6 @@
 # `@another-ui/grid`
 
-Just another component for grid layouts
+Just another 12-column grid layout for React
 
 ## Usage
 
