@@ -1,0 +1,37 @@
+{
+  "name": "@another-ui/grid",
+  "version": "0.1.0",
+  "description": "Just another 12-column grid layout for React",
+  "keywords": [
+    "another",
+    "ui",
+    "grid",
+    "react",
+    "component",
+    "layout"
+  ],
+  "author": "Dan Nguyen <nghuudan@gmail.com>",
+  "homepage": "https://github.com/nghuudan/another-ui/tree/master/packages/grid#readme",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nghuudan/another-ui.git"
+  },
+  "scripts": {
+    "build": "rimraf dist && tsc -p tsconfig.dist.json && sass lib:dist -s compressed",
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/nghuudan/another-ui/issues"
+  },
+  "dependencies": {
+    "react": "^17.0.1"
+  },
+  "devDependencies": {
+    "@testing-library/react": "^11.2.5"
+  }
+}

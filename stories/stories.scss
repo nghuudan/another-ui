@@ -1,0 +1,15 @@
+@import '~@fontsource/open-sans/400.css';
+@import '../packages/grid/lib/grid';
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12pt;
+}
+
+.column-example {
+  background-color: #ccc;
+  border: 1px solid #999;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 1rem;
+}
