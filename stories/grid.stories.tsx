@@ -92,5 +92,5 @@ export const NestedRows = () => (
 );
 
 export default {
-  title: 'React/Grid',
+  title: 'Layout/Grid',
 };
