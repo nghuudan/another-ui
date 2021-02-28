@@ -48,9 +48,8 @@ $aui-dialog-body-min-width: 320px !default;
   box-shadow: 0 .125rem 1rem .125rem $aui-dialog-body-box-shadow-color;
   box-sizing: border-box;
   max-width: 100%;
-  position: relative;
-  transform: scale(25%);
-  transition: transform .125s ease-out;
+  transform: scaleY(25%);
+  transition: transform .25s ease-out;
   width: 100%;
   z-index: 2;
 }
