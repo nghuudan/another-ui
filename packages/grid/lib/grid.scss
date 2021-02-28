@@ -1,6 +1,6 @@
-$aui-breakpoint-md: 768px;
-$aui-breakpoint-lg: 1024px;
-$aui-breakpoint-xl: 1280px;
+$aui-breakpoint-md: 768px !default;
+$aui-breakpoint-lg: 1024px !default;
+$aui-breakpoint-xl: 1280px !default;
 
 @mixin aui-create-column($size) {
   @for $i from 1 through 12 {

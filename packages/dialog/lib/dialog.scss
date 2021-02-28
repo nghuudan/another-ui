@@ -1,0 +1,67 @@
+$aui-breakpoint-md: 768px !default;
+$aui-dialog-overlay-bg-color: rgba(0, 0, 0, .5) !default;
+$aui-dialog-body-bg-color: #fff !default;
+$aui-dialog-body-box-shadow-color: rgba(0, 0, 0, .25) !default;
+$aui-dialog-body-min-width: 320px !default;
+
+.aui-dialog {
+  align-items: center;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  justify-content: center;
+  left: 0;
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  transition: opacity .25s ease-out;
+  width: 100%;
+  z-index: 10000;
+
+  &.aui-dialog-showing {
+    opacity: 1;
+
+    .aui-dialog-body {
+      transform: none;
+    }
+  }
+}
+
+.aui-dialog-overlay {
+  background-color: $aui-dialog-overlay-bg-color;
+  border: 0;
+  box-sizing: border-box;
+  flex: 1 1 auto;
+  height: 100%;
+  left: 0;
+  padding: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.aui-dialog-body {
+  background-color: $aui-dialog-body-bg-color;
+  border-radius: .125rem;
+  box-shadow: 0 .125rem 1rem .125rem $aui-dialog-body-box-shadow-color;
+  box-sizing: border-box;
+  max-width: 100%;
+  position: relative;
+  transform: scale(25%);
+  transition: transform .125s ease-out;
+  width: 100%;
+  z-index: 2;
+}
+
+.aui-dialog-padding {
+  padding: 1rem;
+}
+
+@media screen and (min-width: $aui-breakpoint-md) {
+  .aui-dialog-body {
+    min-width: $aui-dialog-body-min-width;
+    width: auto;
+  }
+}

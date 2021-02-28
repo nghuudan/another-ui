@@ -1,5 +1,10 @@
+@use '../packages/dialog/lib/dialog';
+@use '../packages/grid/lib/grid';
+@import '~@fontsource/open-sans/300.css';
 @import '~@fontsource/open-sans/400.css';
-@import '../packages/grid/lib/grid';
+
+$column-bg-color: #ccc;
+$column-border-color: #999;
 
 body {
   font-family: 'Open Sans', sans-serif;
@@ -7,9 +12,21 @@ body {
 }
 
 .column-example {
-  background-color: #ccc;
-  border: 1px solid #999;
+  background-color: $column-bg-color;
+  border: 1px solid $column-border-color;
   box-sizing: border-box;
   margin: 0;
   padding: 1rem;
+}
+
+.dialog-title {
+  font-size: 2rem;
+  font-weight: 300;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.show-dialog-button {
+  display: block;
+  margin: 1rem 0;
 }
