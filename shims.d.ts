@@ -1,6 +1,6 @@
 declare module '*.scss' {
   const styles: {
-    [className: string];
+    [className: string]: string;
   };
   export default styles;
 }
