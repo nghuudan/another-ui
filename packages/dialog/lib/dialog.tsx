@@ -59,6 +59,7 @@ export const Dialog = ({
               aria-hidden="true"
               className="aui-dialog-overlay"
               onClick={onClickOverlay}
+              tabIndex={-1}
               type="button"
             />
           )
