@@ -12,7 +12,7 @@ import '@another-ui/dialog/dist/dialog.css';
 const DemoDialog = () => {
   const { hide } = useDialog();
   return (
-    <Dialog overlay padding scrolling>
+    <Dialog onClickOverlay={() => hide()} overlay padding scrolling theme="dark">
       <h1>Demo</h1>
       <button onClick={() => hide()} type="button">Hide</button>
     </Dialog>

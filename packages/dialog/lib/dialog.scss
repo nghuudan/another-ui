@@ -1,6 +1,9 @@
 $aui-breakpoint-md: 768px !default;
 $aui-dialog-overlay-bg-color: rgba(0, 0, 0, .5) !default;
 $aui-dialog-body-bg-color: #fff !default;
+$aui-dialog-body-font-color: #000 !default;
+$aui-dialog-body-dark-bg-color: #333 !default;
+$aui-dialog-body-dark-font-color: #fff !default;
 $aui-dialog-body-box-shadow-color: rgba(0, 0, 0, .25) !default;
 $aui-dialog-body-min-width: 320px !default;
 
@@ -47,11 +50,17 @@ $aui-dialog-body-min-width: 320px !default;
   border-radius: .125rem;
   box-shadow: 0 .125rem 1rem .125rem $aui-dialog-body-box-shadow-color;
   box-sizing: border-box;
+  color: $aui-dialog-body-font-color;
   max-width: 100%;
   transform: scale(.25);
   transition: transform .25s ease-out;
   width: 100%;
   z-index: 2;
+
+  &.aui-dialog-theme-dark {
+    background-color: $aui-dialog-body-dark-bg-color;
+    color: $aui-dialog-body-dark-font-color;
+  }
 }
 
 .aui-dialog-padding {

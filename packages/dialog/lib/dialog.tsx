@@ -18,6 +18,8 @@ export interface DialogProps {
   padding?: boolean;
   /** Optional scrolling allowed when the dialog is showing */
   scrolling?: boolean;
+  /** Optional theme for the dialog body */
+  theme?: 'dark';
 }
 
 export const Dialog = ({
@@ -27,6 +29,7 @@ export const Dialog = ({
   overlay,
   padding,
   scrolling,
+  theme,
 }: DialogProps) => {
   const [isShowing, setShowing] = useState(false);
   const cls = ['aui-dialog'];
@@ -35,6 +38,7 @@ export const Dialog = ({
   if (className) cls.push(className);
   if (isShowing) cls.push('aui-dialog-showing');
   if (padding) bodyCls.push('aui-dialog-padding');
+  if (theme) bodyCls.push(`aui-dialog-theme-${theme}`);
 
   useEffect(() => {
     const timeout = setTimeout(() => setShowing(true), 50);

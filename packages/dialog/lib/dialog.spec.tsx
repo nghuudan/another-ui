@@ -57,4 +57,9 @@ describe('Dialog', () => {
     const { container } = render(<Dialog padding />);
     expect(container.querySelector('.aui-dialog-body')).toHaveClass('aui-dialog-padding');
   });
+
+  it('should have class name for dialog body dark theme', () => {
+    const { container } = render(<Dialog theme="dark" />);
+    expect(container.querySelector('.aui-dialog-body')).toHaveClass('aui-dialog-theme-dark');
+  });
 });

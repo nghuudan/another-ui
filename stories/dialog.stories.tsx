@@ -66,6 +66,16 @@ export const ScrollingAllowed = () => {
   );
 };
 
+export const DarkTheme = () => {
+  const { hide } = useDialog();
+  return (
+    <Dialog onClickOverlay={() => hide()} overlay padding theme="dark">
+      <h1 className="dialog-title">Dark Theme</h1>
+      <button onClick={() => hide()} type="button">Hide</button>
+    </Dialog>
+  );
+};
+
 export const ShowDialogController = () => {
   const { show } = useDialog();
   return (
@@ -88,6 +98,9 @@ export const ShowDialogController = () => {
       <button className="show-dialog-button" onClick={() => show('ScrollingAllowed')} type="button">
         Show with Scrolling Allowed
       </button>
+      <button className="show-dialog-button" onClick={() => show('DarkTheme')} type="button">
+        Show with Dark Theme
+      </button>
     </>
   );
 };
@@ -100,6 +113,7 @@ export const TryItOut = () => (
     OverlayAndPadding,
     HandleClickOverlay,
     ScrollingAllowed,
+    DarkTheme,
   }}
   >
     <h1 className="dialog-title">Dialog</h1>
