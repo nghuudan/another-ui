@@ -1,6 +1,6 @@
 {
   "name": "@another-ui/grid",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "Just another 12-column grid layout for React",
   "keywords": [
     "another",
