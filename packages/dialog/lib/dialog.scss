@@ -48,7 +48,7 @@ $aui-dialog-body-min-width: 320px !default;
 .aui-dialog-body {
   background-color: $aui-dialog-body-bg-color;
   border-radius: .125rem;
-  box-shadow: 0 .125rem 1rem .125rem $aui-dialog-body-box-shadow-color;
+  box-shadow: 0 .25rem 1rem .125rem $aui-dialog-body-box-shadow-color;
   box-sizing: border-box;
   color: $aui-dialog-body-font-color;
   max-width: 100%;

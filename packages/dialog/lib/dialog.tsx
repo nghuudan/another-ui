@@ -42,7 +42,7 @@ export const Dialog = ({
 
   useEffect(() => {
     const timeout = setTimeout(() => setShowing(true), 50);
-    const { style } = global.document.body;
+    const { style } = document.body;
     if (!scrolling) style.overflow = 'hidden';
     return () => {
       if (!scrolling) style.overflow = 'auto';

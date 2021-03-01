@@ -1,17 +1,18 @@
 import React from 'react';
 import { Column, ColumnSize, Row } from '../packages/grid/lib';
-import './stories.scss';
+import styles from './stories.module.scss';
+import '../packages/grid/lib/grid.scss';
 
 export const Default = () => (
   <Row>
     <Column sm={6} md={4} lg={3}>
-      <p className="column-example">Column</p>
+      <p className={styles['column-example']}>Column</p>
     </Column>
     <Column sm={6} md={4} lg={3}>
-      <p className="column-example">Column</p>
+      <p className={styles['column-example']}>Column</p>
     </Column>
     <Column md={4} lg={6}>
-      <p className="column-example">Column</p>
+      <p className={styles['column-example']}>Column</p>
     </Column>
   </Row>
 );
@@ -19,13 +20,13 @@ export const Default = () => (
 export const Gutters = () => (
   <Row gutters>
     <Column sm={6} md={4}>
-      <p className="column-example">Column</p>
+      <p className={styles['column-example']}>Column</p>
     </Column>
     <Column sm={6} md={4}>
-      <p className="column-example">Column</p>
+      <p className={styles['column-example']}>Column</p>
     </Column>
     <Column md={4}>
-      <p className="column-example">Column</p>
+      <p className={styles['column-example']}>Column</p>
     </Column>
   </Row>
 );
@@ -33,13 +34,13 @@ export const Gutters = () => (
 export const Margins = () => (
   <Row margins>
     <Column sm={4} md={3}>
-      <p className="column-example">Column</p>
+      <p className={styles['column-example']}>Column</p>
     </Column>
     <Column sm={4} md={3}>
-      <p className="column-example">Column</p>
+      <p className={styles['column-example']}>Column</p>
     </Column>
     <Column sm={4} md={6}>
-      <p className="column-example">Column</p>
+      <p className={styles['column-example']}>Column</p>
     </Column>
   </Row>
 );
@@ -47,16 +48,16 @@ export const Margins = () => (
 export const GuttersAndMargins = () => (
   <Row gutters margins>
     <Column sm={3} md={2}>
-      <p className="column-example">Column</p>
+      <p className={styles['column-example']}>Column</p>
     </Column>
     <Column sm={3} md={2}>
-      <p className="column-example">Column</p>
+      <p className={styles['column-example']}>Column</p>
     </Column>
     <Column sm={3} md={4}>
-      <p className="column-example">Column</p>
+      <p className={styles['column-example']}>Column</p>
     </Column>
     <Column sm={3} md={4}>
-      <p className="column-example">Column</p>
+      <p className={styles['column-example']}>Column</p>
     </Column>
   </Row>
 );
@@ -64,27 +65,27 @@ export const GuttersAndMargins = () => (
 export const NestedRows = () => (
   <Row gutters margins>
     <Column sm={6}>
-      <p className="column-example">Column</p>
+      <p className={styles['column-example']}>Column</p>
       <Row gutters>
         <Column sm={4}>
-          <p className="column-example">Column</p>
+          <p className={styles['column-example']}>Column</p>
         </Column>
         <Column sm={4}>
-          <p className="column-example">Column</p>
+          <p className={styles['column-example']}>Column</p>
         </Column>
         <Column sm={4}>
-          <p className="column-example">Column</p>
+          <p className={styles['column-example']}>Column</p>
         </Column>
       </Row>
     </Column>
     <Column sm={6}>
-      <p className="column-example">Column</p>
+      <p className={styles['column-example']}>Column</p>
       <Row gutters>
         <Column sm={6}>
-          <p className="column-example">Column</p>
+          <p className={styles['column-example']}>Column</p>
         </Column>
         <Column sm={6}>
-          <p className="column-example">Column</p>
+          <p className={styles['column-example']}>Column</p>
         </Column>
       </Row>
     </Column>
@@ -94,16 +95,16 @@ export const NestedRows = () => (
 export const OffsetColumns = () => (
   <Row gutters margins>
     <Column sm={6}>
-      <p className="column-example">Column</p>
+      <p className={styles['column-example']}>Column</p>
     </Column>
     <Column sm={6}>
-      <p className="column-example">Column</p>
+      <p className={styles['column-example']}>Column</p>
     </Column>
     <Column sm={4} smOffset={4}>
-      <p className="column-example">Column</p>
+      <p className={styles['column-example']}>Column</p>
     </Column>
     <Column sm={4}>
-      <p className="column-example">Column</p>
+      <p className={styles['column-example']}>Column</p>
     </Column>
   </Row>
 );
@@ -129,13 +130,13 @@ export const TryItOut = ({
 }) => (
   <Row gutters={gutters} margins={margins}>
     <Column sm={columnOne} smOffset={columnOneOffset}>
-      <p className="column-example">Column</p>
+      <p className={styles['column-example']}>Column</p>
     </Column>
     <Column sm={columnTwo} smOffset={columnTwoOffset}>
-      <p className="column-example">Column</p>
+      <p className={styles['column-example']}>Column</p>
     </Column>
     <Column sm={columnThree} smOffset={columnThreeOffset}>
-      <p className="column-example">Column</p>
+      <p className={styles['column-example']}>Column</p>
     </Column>
   </Row>
 );
