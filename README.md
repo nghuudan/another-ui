@@ -4,6 +4,9 @@ Just another library for React components
 
 ## Components
 
+### Containers
 - [Dialog](./packages/dialog)
-- [Grid](./packages/grid)
 - [Header](./packages/header)
+
+### Layout
+- [Grid](./packages/grid)
