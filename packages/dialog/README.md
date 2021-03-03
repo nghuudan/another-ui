@@ -6,7 +6,7 @@ Just another dialog component for React
 
 ```js
 import React from 'react';
-import { DialogProvider, Dialog, useDialog } from '@another-ui/dialog';
+import { Dialog, DialogProvider, useDialog } from '@another-ui/dialog';
 import '@another-ui/dialog/dist/dialog.css';
 
 const DemoDialog = () => {

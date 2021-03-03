@@ -6,6 +6,7 @@ Just another library for React components
 
 ### Containers
 - [Dialog](./packages/dialog)
+- [Drawer](./packages/drawer)
 - [Header](./packages/header)
 
 ### Layout

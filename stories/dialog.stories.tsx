@@ -87,7 +87,7 @@ export const DarkTheme = () => {
   );
 };
 
-export const ShowDialogController = () => {
+export const DialogController = () => {
   const { show } = useDialog();
   return (
     <>
@@ -156,7 +156,7 @@ export const TryItOut = () => (
   }}
   >
     <h1 className={styles['dialog-title']}>Dialog</h1>
-    <ShowDialogController />
+    <DialogController />
     <p style={{ height: '2000px' }}>DEMO</p>
   </DialogProvider>
 );

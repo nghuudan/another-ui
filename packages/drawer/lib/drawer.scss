@@ -1,0 +1,70 @@
+$aui-drawer-bg-color: #fff;
+$aui-drawer-font-color: #000;
+$aui-drawer-dark-bg-color: #333;
+$aui-drawer-dark-font-color: #fff;
+$aui-drawer-box-shadow-color: rgba(0, 0, 0, .125);
+
+.aui-drawer {
+  background-color: $aui-drawer-bg-color;
+  box-shadow: 0 0 .25rem .125rem $aui-drawer-box-shadow-color;
+  box-sizing: border-box;
+  color: $aui-drawer-font-color;
+  max-height: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  position: fixed;
+  z-index: 9998;
+
+  &.aui-drawer-direction-bottom {
+    bottom: -100%;
+    left: 0;
+    transition: bottom .25s ease-out;
+    width: 100%;
+
+    &.aui-drawer-open {
+      bottom: 0;
+    }
+  }
+
+  &.aui-drawer-direction-left {
+    height: 100%;
+    left: -100%;
+    top: 0;
+    transition: left .25s ease-out;
+
+    &.aui-drawer-open {
+      left: 0;
+    }
+  }
+
+  &.aui-drawer-direction-right {
+    height: 100%;
+    right: -100%;
+    top: 0;
+    transition: right .25s ease-out;
+
+    &.aui-drawer-open {
+      right: 0;
+    }
+  }
+
+  &.aui-drawer-direction-top {
+    left: 0;
+    top: -100%;
+    transition: top .25s ease-out;
+    width: 100%;
+
+    &.aui-drawer-open {
+      top: 0;
+    }
+  }
+
+  &.aui-drawer-theme-dark {
+    background-color: $aui-drawer-dark-bg-color;
+    color: $aui-drawer-dark-font-color;
+  }
+}
+
+.aui-drawer-padding {
+  padding: 1rem;
+}

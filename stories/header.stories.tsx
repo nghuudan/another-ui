@@ -14,7 +14,7 @@ export const Fixed = () => (
     <Header fixed>
       <h1 className={styles['header-title']}>Fixed</h1>
     </Header>
-    <p style={{ height: '2000px' }}>DEMO</p>
+    <p style={{ height: '2000px', marginTop: '2rem' }}>DEMO</p>
   </>
 );
 
@@ -29,7 +29,7 @@ export const FixedAndPadding = () => (
     <Header fixed padding>
       <h1 className={styles['header-title']}>Fixed and Padding</h1>
     </Header>
-    <p style={{ height: '2000px' }}>DEMO</p>
+    <p style={{ height: '2000px', marginTop: '4rem' }}>DEMO</p>
   </>
 );
 
