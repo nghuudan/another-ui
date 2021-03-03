@@ -1,8 +1,8 @@
-$aui-drawer-bg-color: #fff;
-$aui-drawer-font-color: #000;
-$aui-drawer-dark-bg-color: #333;
-$aui-drawer-dark-font-color: #fff;
-$aui-drawer-box-shadow-color: rgba(0, 0, 0, .125);
+$aui-drawer-bg-color: #fff !default;
+$aui-drawer-font-color: #000 !default;
+$aui-drawer-dark-bg-color: #333 !default;
+$aui-drawer-dark-font-color: #fff !default;
+$aui-drawer-box-shadow-color: rgba(0, 0, 0, .125) !default;
 
 .aui-drawer {
   background-color: $aui-drawer-bg-color;
