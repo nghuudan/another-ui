@@ -6,3 +6,4 @@ Just another library for React components
 
 - [Dialog](./packages/dialog)
 - [Grid](./packages/grid)
+- [Header](./packages/header)
