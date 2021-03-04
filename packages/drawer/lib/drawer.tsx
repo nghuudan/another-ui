@@ -5,6 +5,10 @@ export interface DrawerProps {
   children?: ReactNode;
   /** Optional class name for the drawer */
   className?: string;
+  /**
+   * Sets the direction from where the drawer opens
+   * @default 'bottom'
+   */
   direction?: 'bottom' | 'left' | 'right' | 'top';
   /** Optional padding for the drawer */
   padding?: boolean;
