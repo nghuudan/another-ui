@@ -67,6 +67,10 @@ $aui-dialog-body-min-width: 320px !default;
   padding: 1rem;
 }
 
+.aui-dialog-no-scroll {
+  overflow: hidden;
+}
+
 @media screen and (min-width: $aui-breakpoint-md) {
   .aui-dialog-body {
     min-width: $aui-dialog-body-min-width;

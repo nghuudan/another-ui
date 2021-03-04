@@ -42,10 +42,10 @@ export const Dialog = ({
 
   useEffect(() => {
     const timeout = setTimeout(() => setShowing(true), 50);
-    const { style } = document.body;
-    if (!scrolling) style.overflow = 'hidden';
+    const noScrollCls = 'aui-dialog-no-scroll';
+    if (!scrolling) document.body.classList.add(noScrollCls);
     return () => {
-      if (!scrolling) style.overflow = 'auto';
+      document.body.classList.remove(noScrollCls);
       clearTimeout(timeout);
     };
   }, []);

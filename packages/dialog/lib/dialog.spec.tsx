@@ -30,14 +30,14 @@ describe('Dialog', () => {
     expect(container.firstChild).toHaveClass('aui-dialog-showing');
   });
 
-  it('should set body style overflow to hidden', () => {
+  it('should have class name for no scrolling', () => {
     render(<Dialog />);
-    expect(global.document.body).toHaveStyle({ overflow: 'hidden' });
+    expect(global.document.body).toHaveClass('aui-dialog-no-scroll');
   });
 
-  it('should not set body style overflow to hidden when scrolling is allowed', () => {
+  it('should not have class name for no scrolling when scrolling is allowed', () => {
     render(<Dialog scrolling />);
-    expect(global.document.body).not.toHaveStyle({ overflow: 'hidden' });
+    expect(global.document.body).not.toHaveClass('aui-dialog-no-scroll');
   });
 
   it('should have button for dialog overlay', () => {
