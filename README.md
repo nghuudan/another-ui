@@ -8,6 +8,7 @@ Just another library for React components
 - [Dialog](./packages/dialog)
 - [Drawer](./packages/drawer)
 - [Header](./packages/header)
+- [Pane](./packages/pane)
 
 ### Layout
 - [Grid](./packages/grid)

@@ -1,0 +1,65 @@
+$aui-pane-bg-color: #fff !default;
+$aui-pane-font-color: #000 !default;
+$aui-pane-dark-bg-color: #333 !default;
+$aui-pane-dark-font-color: #fff !default;
+$aui-pane-box-shadow-color: rgba(0, 0, 0, .125) !default;
+$aui-pane-header-bg-color: #ccc !default;
+$aui-pane-header-font-color: #000 !default;
+$aui-pane-header-dark-bg-color: #000 !default;
+$aui-pane-header-dark-font-color: #fff !default;
+
+.aui-pane {
+  background-color: $aui-pane-bg-color;
+  border-radius: .125rem;
+  box-shadow: 0 .125rem .25rem .125rem $aui-pane-box-shadow-color;
+  color: $aui-pane-font-color;
+  left: auto;
+  overflow: hidden;
+  position: fixed;
+  top: auto;
+  z-index: 9997;
+
+  &.aui-pane-padding {
+    .aui-pane-handle {
+      padding: 1rem;
+    }
+
+    .aui-pane-heading {
+      line-height: 1.2;
+      padding: 1rem;
+    }
+
+    .aui-pane-body {
+      padding: 1rem;
+    }
+  }
+
+  &.aui-pane-theme-dark {
+    background-color: $aui-pane-dark-bg-color;
+    color: $aui-pane-dark-font-color;
+
+    .aui-pane-header {
+      background-color: $aui-pane-header-dark-bg-color;
+      color: $aui-pane-header-dark-font-color;
+    }
+  }
+}
+
+.aui-pane-header {
+  background-color: $aui-pane-header-bg-color;
+  color: $aui-pane-header-font-color;
+}
+
+.aui-pane-handle {
+  background-color: transparent;
+  border: 0;
+  color: inherit;
+  display: block;
+  font-family: inherit;
+  font-size: 1rem;
+  line-height: 1.2;
+  outline: 0;
+  padding: 0;
+  text-align: left;
+  width: 100%;
+}
