@@ -1,6 +1,7 @@
 import React, {
   ReactNode,
   useEffect,
+  useRef,
   useState,
 } from 'react';
 
@@ -27,6 +28,7 @@ export const Pane = ({
   padding,
   theme,
 }: PaneProps) => {
+  const ref = useRef<HTMLDivElement>(null);
   const cls = ['aui-pane'];
   const [offset, setOffset] = useState([0, 0]);
   const [position, setPosition] = useState([0, 0]);
@@ -40,17 +42,27 @@ export const Pane = ({
   if (padding) cls.push('aui-pane-padding');
   if (theme) cls.push(`aui-pane-theme-${theme}`);
 
+  const getClampPosition = (x: number, y: number) => {
+    const clampPosition = [x, y];
+    const { innerWidth, innerHeight } = window;
+    const { offsetWidth, offsetHeight } = ref.current || { offsetWidth: 0, offsetHeight: 0 };
+    if (x < 0) clampPosition[0] = 0;
+    if (y < 0) clampPosition[1] = 0;
+    if (x + offsetWidth > innerWidth) clampPosition[0] = innerWidth - offsetWidth;
+    if (y + offsetHeight > innerHeight) clampPosition[1] = innerHeight - offsetHeight;
+    return clampPosition;
+  };
+
   const handleWindowMouseMove = (event: MouseEvent) => {
     if (isDragging) {
-      setPosition([event.pageX - offset[0], event.pageY - offset[1]]);
+      setPosition(getClampPosition(event.pageX - offset[0], event.pageY - offset[1]));
     }
   };
 
   const handleWindowTouchMove = (event: TouchEvent) => {
-    event.preventDefault();
     if (isDragging && event.touches.length === 1) {
       const { pageX, pageY } = event.touches[0];
-      setPosition([pageX - offset[0], pageY - offset[1]]);
+      setPosition(getClampPosition(pageX - offset[0], pageY - offset[1]));
     }
   };
 
@@ -93,7 +105,7 @@ export const Pane = ({
   };
 
   return (
-    <div className={cls.join(' ')} style={style}>
+    <div className={cls.join(' ')} ref={ref} style={style}>
       <div className="aui-pane-header">
         {
           draggable ? (

@@ -12,6 +12,7 @@ $aui-pane-header-dark-font-color: #fff !default;
   background-color: $aui-pane-bg-color;
   border-radius: .125rem;
   box-shadow: 0 .125rem .25rem .125rem $aui-pane-box-shadow-color;
+  box-sizing: border-box;
   color: $aui-pane-font-color;
   left: auto;
   overflow: hidden;
@@ -47,12 +48,18 @@ $aui-pane-header-dark-font-color: #fff !default;
 
 .aui-pane-header {
   background-color: $aui-pane-header-bg-color;
+  box-sizing: border-box;
   color: $aui-pane-header-font-color;
+}
+
+.aui-pane-heading {
+  box-sizing: border-box;
 }
 
 .aui-pane-handle {
   background-color: transparent;
   border: 0;
+  box-sizing: border-box;
   color: inherit;
   display: block;
   font-family: inherit;
@@ -62,4 +69,8 @@ $aui-pane-header-dark-font-color: #fff !default;
   padding: 0;
   text-align: left;
   width: 100%;
+}
+
+.aui-pane-body {
+  box-sizing: border-box;
 }
