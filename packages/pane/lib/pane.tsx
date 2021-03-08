@@ -39,6 +39,7 @@ export const Pane = ({
   const handleWindowTouchEnd = () => setDragging(false);
 
   if (className) cls.push(className);
+  if (draggable) cls.push('aui-pane-draggable');
   if (padding) cls.push('aui-pane-padding');
   if (theme) cls.push(`aui-pane-theme-${theme}`);
 

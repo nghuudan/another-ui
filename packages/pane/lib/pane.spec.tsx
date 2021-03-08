@@ -19,6 +19,11 @@ describe('Pane', () => {
     expect(container.firstChild).toHaveClass('test-class');
   });
 
+  it('should have class name for draggable', () => {
+    const { container } = render(<Pane draggable />);
+    expect(container.firstChild).toHaveClass('aui-pane-draggable');
+  });
+
   it('should have class name for pane padding', () => {
     const { container } = render(<Pane padding />);
     expect(container.firstChild).toHaveClass('aui-pane-padding');

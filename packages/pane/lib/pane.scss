@@ -14,11 +14,6 @@ $aui-pane-header-dark-font-color: #fff !default;
   box-shadow: 0 .125rem .25rem .125rem $aui-pane-box-shadow-color;
   box-sizing: border-box;
   color: $aui-pane-font-color;
-  left: auto;
-  overflow: hidden;
-  position: fixed;
-  top: auto;
-  z-index: 9997;
 
   &.aui-pane-padding {
     .aui-pane-handle {
@@ -44,6 +39,14 @@ $aui-pane-header-dark-font-color: #fff !default;
       color: $aui-pane-header-dark-font-color;
     }
   }
+}
+
+.aui-pane-draggable {
+  left: auto;
+  overflow: hidden;
+  position: fixed;
+  top: auto;
+  z-index: 9997;
 }
 
 .aui-pane-header {
