@@ -10,7 +10,7 @@ import { Pane } from '@another-ui/pane';
 import '@another-ui/pane/dist/pane.css';
 
 export const Example = () => (
-  <Pane draggable heading="Example" padding theme="dark">
+  <Pane draggable heading="Example" padding resizable snapTo={8} theme="dark">
     <p>Demo</p>
   </Pane>
 );

@@ -16,7 +16,7 @@ export interface PaneProps {
   heading?: ReactNode;
   /** Optional padding for the pane header and body */
   padding?: boolean;
-  /** Enables pane to be resizable by the its edges */
+  /** Enables pane to be resizable by the lower-right corner */
   resizable?: boolean;
   /** Optional snap position size when draggable */
   snapTo?: number;
