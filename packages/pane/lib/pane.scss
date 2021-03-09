@@ -1,19 +1,12 @@
-$aui-pane-bg-color: #fff !default;
-$aui-pane-font-color: #000 !default;
-$aui-pane-dark-bg-color: #333 !default;
-$aui-pane-dark-font-color: #fff !default;
-$aui-pane-box-shadow-color: rgba(0, 0, 0, .125) !default;
-$aui-pane-header-bg-color: #ccc !default;
-$aui-pane-header-font-color: #000 !default;
-$aui-pane-header-dark-bg-color: #000 !default;
-$aui-pane-header-dark-font-color: #fff !default;
+@import '../../../styles/mixins';
+@import '../../../styles/variables';
 
 .aui-pane {
-  background-color: $aui-pane-bg-color;
+  background-color: $aui-default-bg-color;
   border-radius: .125rem;
-  box-shadow: 0 .125rem .25rem .125rem $aui-pane-box-shadow-color;
+  box-shadow: 0 .125rem .25rem .125rem $aui-shadow-color-12;
   box-sizing: border-box;
-  color: $aui-pane-font-color;
+  color: $aui-default-font-color;
 
   &.aui-pane-padding {
     .aui-pane-handle {
@@ -31,12 +24,12 @@ $aui-pane-header-dark-font-color: #fff !default;
   }
 
   &.aui-pane-theme-dark {
-    background-color: $aui-pane-dark-bg-color;
-    color: $aui-pane-dark-font-color;
+    background-color: $aui-theme-dark-bg-color;
+    color: $aui-theme-dark-font-color;
 
     .aui-pane-header {
-      background-color: $aui-pane-header-dark-bg-color;
-      color: $aui-pane-header-dark-font-color;
+      background-color: $aui-theme-dark-alt-bg-color;
+      color: $aui-theme-dark-alt-font-color;
     }
   }
 }
@@ -50,9 +43,9 @@ $aui-pane-header-dark-font-color: #fff !default;
 }
 
 .aui-pane-header {
-  background-color: $aui-pane-header-bg-color;
+  background-color: $aui-default-alt-bg-color;
   box-sizing: border-box;
-  color: $aui-pane-header-font-color;
+  color: $aui-default-alt-font-color;
 }
 
 .aui-pane-heading {

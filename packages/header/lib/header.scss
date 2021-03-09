@@ -1,19 +1,16 @@
-$aui-header-bg-color: #fff !default;
-$aui-header-font-color: #000 !default;
-$aui-header-dark-bg-color: #333 !default;
-$aui-header-dark-font-color: #fff !default;
-$aui-header-box-shadow-color: rgba(0, 0, 0, .125) !default;
+@import '../../../styles/mixins';
+@import '../../../styles/variables';
 
 .aui-header {
-  background-color: $aui-header-bg-color;
+  background-color: $aui-default-bg-color;
   border-radius: .125rem;
-  box-shadow: 0 .125rem .25rem .125rem $aui-header-box-shadow-color;
+  box-shadow: 0 .125rem .25rem .125rem $aui-shadow-color-12;
   box-sizing: border-box;
-  color: $aui-header-font-color;
+  color: $aui-default-font-color;
 
   &.aui-header-theme-dark {
-    background-color: $aui-header-dark-bg-color;
-    color: $aui-header-dark-font-color;
+    background-color: $aui-theme-dark-bg-color;
+    color: $aui-theme-dark-font-color;
   }
 }
 

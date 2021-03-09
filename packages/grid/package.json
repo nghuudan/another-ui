@@ -22,7 +22,7 @@
     "url": "git+https://github.com/nghuudan/another-ui.git"
   },
   "scripts": {
-    "build": "rimraf dist esmodule && tsc -p tsconfig.dist.json && tsc -p tsconfig.esmodule.json && sass lib:dist -s compressed",
+    "build": "rimraf dist esmodule && tsc -p tsconfig.dist.json && tsc -p tsconfig.esmodule.json && sass lib:dist --no-source-map -s compressed",
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
   "bugs": {

@@ -1,11 +1,5 @@
-$aui-breakpoint-md: 768px !default;
-$aui-dialog-overlay-bg-color: rgba(0, 0, 0, .5) !default;
-$aui-dialog-body-bg-color: #fff !default;
-$aui-dialog-body-font-color: #000 !default;
-$aui-dialog-body-dark-bg-color: #333 !default;
-$aui-dialog-body-dark-font-color: #fff !default;
-$aui-dialog-body-box-shadow-color: rgba(0, 0, 0, .25) !default;
-$aui-dialog-body-min-width: 320px !default;
+@import '../../../styles/mixins';
+@import '../../../styles/variables';
 
 .aui-dialog {
   align-items: center;
@@ -32,7 +26,7 @@ $aui-dialog-body-min-width: 320px !default;
 }
 
 .aui-dialog-overlay {
-  background-color: $aui-dialog-overlay-bg-color;
+  background-color: $aui-shadow-color-50;
   border: 0;
   box-sizing: border-box;
   flex: 1 1 auto;
@@ -46,11 +40,11 @@ $aui-dialog-body-min-width: 320px !default;
 }
 
 .aui-dialog-body {
-  background-color: $aui-dialog-body-bg-color;
+  background-color: $aui-default-bg-color;
   border-radius: .125rem;
-  box-shadow: 0 .25rem 1rem .125rem $aui-dialog-body-box-shadow-color;
+  box-shadow: 0 .25rem 1rem .125rem $aui-shadow-color-25;
   box-sizing: border-box;
-  color: $aui-dialog-body-font-color;
+  color: $aui-default-font-color;
   max-width: 100%;
   transform: scale(.25);
   transition: transform .25s ease-out;
@@ -58,8 +52,8 @@ $aui-dialog-body-min-width: 320px !default;
   z-index: 2;
 
   &.aui-dialog-theme-dark {
-    background-color: $aui-dialog-body-dark-bg-color;
-    color: $aui-dialog-body-dark-font-color;
+    background-color: $aui-theme-dark-bg-color;
+    color: $aui-theme-dark-font-color;
   }
 }
 
@@ -71,9 +65,9 @@ $aui-dialog-body-min-width: 320px !default;
   overflow: hidden;
 }
 
-@media screen and (min-width: $aui-breakpoint-md) {
+@include aui-breakpoint($aui-breakpoint-md) {
   .aui-dialog-body {
-    min-width: $aui-dialog-body-min-width;
+    min-width: $aui-breakpoint-sm;
     width: auto;
   }
 }

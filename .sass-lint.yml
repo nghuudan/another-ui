@@ -2,3 +2,4 @@ files:
   include:
     - 'packages/**/*.scss'
     - 'stories/**/*.scss'
+    - 'styles/**/*.scss'

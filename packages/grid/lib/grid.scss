@@ -1,28 +1,5 @@
-$aui-breakpoint-md: 768px !default;
-$aui-breakpoint-lg: 1024px !default;
-$aui-breakpoint-xl: 1280px !default;
-
-@mixin aui-create-column($size) {
-  @for $i from 1 through 12 {
-    .aui-col-#{$size}-#{$i} {
-      width: $i * (100% / 12);
-    }
-  }
-}
-
-@mixin aui-create-column-offset($size) {
-  @for $i from 1 through 12 {
-    .aui-col-#{$size}-offset-#{$i} {
-      margin-left: $i * (100% / 12);
-    }
-  }
-}
-
-@mixin aui-breakpoint($width) {
-  @media screen and (min-width: $width) {
-    @content
-  }
-}
+@import '../../../styles/mixins';
+@import '../../../styles/variables';
 
 .aui-row {
   align-items: flex-start;
