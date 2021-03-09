@@ -16,6 +16,10 @@ export interface PaneProps {
   heading?: ReactNode;
   /** Optional padding for the pane header and body */
   padding?: boolean;
+  /** Enables pane to be resizable by the its edges */
+  resizable?: boolean;
+  /** Optional snap position size when draggable */
+  snapTo?: number;
   /** Sets optional theme for the pane */
   theme?: 'dark';
 }
@@ -26,17 +30,32 @@ export const Pane = ({
   draggable,
   heading,
   padding,
+  resizable,
+  snapTo,
   theme,
 }: PaneProps) => {
   const ref = useRef<HTMLDivElement>(null);
   const cls = ['aui-pane'];
   const [offset, setOffset] = useState([0, 0]);
   const [position, setPosition] = useState([0, 0]);
+  const [size, setSize] = useState([
+    ref.current?.offsetWidth,
+    ref.current?.offsetHeight,
+  ]);
   const [isDragging, setDragging] = useState(false);
+  const [isResizing, setResizing] = useState(false);
   const handleMouseDown = () => setDragging(true);
+  const handleMouseDownResize = () => setResizing(true);
   const handleTouchStart = () => setDragging(true);
-  const handleWindowMouseUp = () => setDragging(false);
-  const handleWindowTouchEnd = () => setDragging(false);
+  const handleTouchStartResize = () => setResizing(true);
+  const handleWindowMouseUp = () => {
+    setResizing(false);
+    setDragging(false);
+  };
+  const handleWindowTouchEnd = () => {
+    setResizing(false);
+    setDragging(false);
+  };
 
   if (className) cls.push(className);
   if (draggable) cls.push('aui-pane-draggable');
@@ -51,24 +70,46 @@ export const Pane = ({
     if (y < 0) clampPosition[1] = 0;
     if (x + offsetWidth > innerWidth) clampPosition[0] = innerWidth - offsetWidth;
     if (y + offsetHeight > innerHeight) clampPosition[1] = innerHeight - offsetHeight;
+    if (snapTo) {
+      clampPosition[0] = Math.round(clampPosition[0] / snapTo) * snapTo;
+      clampPosition[1] = Math.round(clampPosition[1] / snapTo) * snapTo;
+    }
     return clampPosition;
   };
 
+  const getClampSize = (x: number, y: number) => {
+    const { innerWidth, innerHeight } = window;
+    const { offsetLeft, offsetTop } = ref.current || { offsetLeft: 0, offsetTop: 0 };
+    let width = x - offsetLeft + 8;
+    let height = y - offsetTop + 8;
+    if (width + offsetLeft > innerWidth) width = innerWidth - offsetLeft;
+    if (height + offsetTop > innerHeight) height = innerHeight - offsetTop;
+    return [
+      Math.max(48, width),
+      Math.max(48, height),
+    ];
+  };
+
   const handleWindowMouseMove = (event: MouseEvent) => {
-    if (isDragging) {
-      setPosition(getClampPosition(event.pageX - offset[0], event.pageY - offset[1]));
+    const { pageX, pageY } = event;
+    if (isDragging && !isResizing) {
+      setPosition(getClampPosition(pageX - offset[0], pageY - offset[1]));
+    } else if (!isDragging && isResizing) {
+      setSize(getClampSize(pageX, pageY));
     }
   };
 
   const handleWindowTouchMove = (event: TouchEvent) => {
-    if (isDragging && event.touches.length === 1) {
-      const { pageX, pageY } = event.touches[0];
+    const { pageX, pageY } = event.touches[0];
+    if (isDragging && !isResizing && event.touches.length === 1) {
       setPosition(getClampPosition(pageX - offset[0], pageY - offset[1]));
+    } else if (!isDragging && isResizing && event.touches.length === 1) {
+      setSize(getClampSize(pageX, pageY));
     }
   };
 
   const handleWindowMouseDown = (event: MouseEvent) => {
-    if (!isDragging) {
+    if (!isDragging && !isResizing) {
       setOffset([event.pageX - position[0], event.pageY - position[1]]);
     }
   };
@@ -81,7 +122,7 @@ export const Pane = ({
   };
 
   useEffect(() => {
-    if (draggable) {
+    if (draggable || resizable) {
       window.addEventListener('mousemove', handleWindowMouseMove, false);
       window.addEventListener('touchmove', handleWindowTouchMove, false);
       window.addEventListener('mousedown', handleWindowMouseDown, false);
@@ -97,12 +138,14 @@ export const Pane = ({
       window.removeEventListener('mouseup', handleWindowMouseUp);
       window.removeEventListener('touchend', handleWindowTouchEnd);
     };
-  }, [isDragging, offset, position]);
+  }, [isDragging, isResizing, offset, position]);
 
   const paneHeading = heading ? <div className="aui-pane-heading">{heading}</div> : null;
   const style = {
     left: `${position[0]}px`,
     top: `${position[1]}px`,
+    width: size[0] ? `${size[0]}px` : 'auto',
+    height: size[1] ? `${size[1]}px` : 'auto',
   };
 
   return (
@@ -124,6 +167,18 @@ export const Pane = ({
         }
       </div>
       <div className="aui-pane-body">{children}</div>
+      {
+        resizable ? (
+          <button
+            aria-hidden="true"
+            className="aui-pane-resize"
+            onMouseDown={handleMouseDownResize}
+            onTouchStart={handleTouchStartResize}
+            tabIndex={-1}
+            type="button"
+          />
+        ) : null
+      }
     </div>
   );
 };

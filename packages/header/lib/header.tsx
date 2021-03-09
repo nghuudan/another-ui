@@ -60,7 +60,7 @@ export const Header = ({
     }
     return () => {
       window.removeEventListener('scroll', handleScroll);
-      clearTimeout(timeout);
+      window.clearTimeout(timeout);
     };
   }, [top]);
 

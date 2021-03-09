@@ -27,6 +27,34 @@ export const Draggable = () => (
   </Pane>
 );
 
+export const Resizable = () => (
+  <Pane heading="Resizable" padding resizable>
+    Content
+  </Pane>
+);
+
+export const DraggableAndResizable = () => (
+  <Pane
+    heading="Draggable and Resizable"
+    draggable
+    resizable
+    padding
+  >
+    Content
+  </Pane>
+);
+
+export const DraggableAndSnapTo = () => (
+  <Pane
+    heading="Draggable and Snap To (32px)"
+    draggable
+    padding
+    snapTo={32}
+  >
+    Content
+  </Pane>
+);
+
 export const DarkTheme = () => (
   <Pane heading="Dark Theme" draggable padding theme="dark">
     Content
@@ -38,12 +66,16 @@ export const TryItOut = ({
   draggable,
   heading,
   padding,
+  resizable,
+  snapTo,
   theme,
 }: PaneProps) => (
   <Pane
     draggable={draggable}
     heading={heading}
     padding={padding}
+    resizable={resizable}
+    snapTo={snapTo}
     theme={theme}
   >
     {children}
@@ -55,6 +87,8 @@ TryItOut.args = {
   draggable: true,
   heading: 'Try It Out',
   padding: true,
+  resizable: true,
+  snapTo: 32,
   theme: 'dark',
 };
 

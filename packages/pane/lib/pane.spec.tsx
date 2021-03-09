@@ -46,7 +46,7 @@ describe('Pane', () => {
 
   // Cannot simulate trusted events
   it('should set styles for position with offset on mouse events', () => {
-    const { container } = render(<Pane draggable />);
+    const { container } = render(<Pane draggable snapTo={8} />);
     const paneHandle = container.querySelector('.aui-pane-handle') as HTMLButtonElement;
     fireEvent.mouseDown(paneHandle);
     fireEvent.mouseDown(window);
@@ -57,12 +57,34 @@ describe('Pane', () => {
 
   // Cannot simulate trusted events
   it('should set styles for position with offset on touch events', () => {
-    const { container } = render(<Pane draggable />);
+    const { container } = render(<Pane draggable snapTo={8} />);
     const paneHandle = container.querySelector('.aui-pane-handle') as HTMLButtonElement;
     fireEvent.touchStart(window, { touches: [{}] });
     fireEvent.touchStart(paneHandle);
     fireEvent.touchMove(window, { touches: [{}] });
     fireEvent.touchEnd(window);
     expect(container.firstChild).toHaveStyle({ left: '0px', top: '0px' });
+  });
+
+  // Cannot simulate trusted events
+  it('should set styles for size with offset on mouse events', () => {
+    const { container } = render(<Pane resizable />);
+    const paneHandle = container.querySelector('.aui-pane-resize') as HTMLButtonElement;
+    fireEvent.mouseDown(paneHandle);
+    fireEvent.mouseDown(window);
+    fireEvent.mouseMove(window);
+    fireEvent.mouseUp(window);
+    expect(container.firstChild).toHaveStyle({ width: 'auto', height: 'auto' });
+  });
+
+  // Cannot simulate trusted events
+  it('should set styles for size with offset on touch events', () => {
+    const { container } = render(<Pane resizable />);
+    const paneHandle = container.querySelector('.aui-pane-resize') as HTMLButtonElement;
+    fireEvent.touchStart(window, { touches: [{}] });
+    fireEvent.touchStart(paneHandle);
+    fireEvent.touchMove(window, { touches: [{}] });
+    fireEvent.touchEnd(window);
+    expect(container.firstChild).toHaveStyle({ width: 'auto', height: 'auto' });
   });
 });

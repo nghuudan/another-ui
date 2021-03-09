@@ -7,6 +7,15 @@
   box-shadow: 0 .125rem .25rem .125rem $aui-shadow-color-12;
   box-sizing: border-box;
   color: $aui-default-font-color;
+  overflow: hidden;
+  position: relative;
+
+  &.aui-pane-draggable {
+    left: auto;
+    position: fixed;
+    top: auto;
+    z-index: 9997;
+  }
 
   &.aui-pane-padding {
     .aui-pane-handle {
@@ -31,15 +40,12 @@
       background-color: $aui-theme-dark-alt-bg-color;
       color: $aui-theme-dark-alt-font-color;
     }
-  }
-}
 
-.aui-pane-draggable {
-  left: auto;
-  overflow: hidden;
-  position: fixed;
-  top: auto;
-  z-index: 9997;
+    .aui-pane-resize {
+      border-bottom: .5rem solid $aui-theme-dark-alt-bg-color;
+      border-right: .5rem solid $aui-theme-dark-alt-bg-color;
+    }
+  }
 }
 
 .aui-pane-header {
@@ -57,6 +63,7 @@
   border: 0;
   box-sizing: border-box;
   color: inherit;
+  cursor: move;
   display: block;
   font-family: inherit;
   font-size: 1rem;
@@ -69,4 +76,21 @@
 
 .aui-pane-body {
   box-sizing: border-box;
+}
+
+.aui-pane-resize {
+  background-color: transparent;
+  border-bottom: .5rem solid $aui-default-alt-bg-color;
+  border-left: .5rem solid transparent;
+  border-right: .5rem solid $aui-default-alt-bg-color;
+  border-top: .5rem solid transparent;
+  bottom: 0;
+  box-sizing: border-box;
+  cursor: nwse-resize;
+  height: 0;
+  outline: 0;
+  padding: 0;
+  position: absolute;
+  right: 0;
+  width: 0;
 }
