@@ -49,6 +49,7 @@ export const DraggableAndSnapTo = () => (
     heading="Draggable and Snap To (32px)"
     draggable
     padding
+    resizable
     snapTo={32}
   >
     Content
@@ -56,7 +57,13 @@ export const DraggableAndSnapTo = () => (
 );
 
 export const DarkTheme = () => (
-  <Pane heading="Dark Theme" draggable padding theme="dark">
+  <Pane
+    heading="Dark Theme"
+    draggable
+    padding
+    resizable
+    theme="dark"
+  >
     Content
   </Pane>
 );

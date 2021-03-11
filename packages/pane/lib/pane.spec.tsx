@@ -44,9 +44,25 @@ describe('Pane', () => {
     expect(container).toHaveTextContent('Test Heading');
   });
 
+  it('should set initial position and size from props', () => {
+    const initial = {
+      x: 100,
+      y: 100,
+      width: 200,
+      height: 200,
+    };
+    const { container } = render(<Pane initial={initial} />);
+    expect(container.firstChild).toHaveStyle({
+      left: `${initial.x}px`,
+      top: `${initial.y}px`,
+      width: `${initial.width}px`,
+      height: `${initial.height}px`,
+    });
+  });
+
   // Cannot simulate trusted events
   it('should set styles for position with offset on mouse events', () => {
-    const { container } = render(<Pane draggable snapTo={8} />);
+    const { container } = render(<Pane draggable />);
     const paneHandle = container.querySelector('.aui-pane-handle') as HTMLButtonElement;
     fireEvent.mouseDown(paneHandle);
     fireEvent.mouseDown(window);
@@ -79,7 +95,7 @@ describe('Pane', () => {
 
   // Cannot simulate trusted events
   it('should set styles for size with offset on touch events', () => {
-    const { container } = render(<Pane resizable />);
+    const { container } = render(<Pane resizable snapTo={8} />);
     const paneHandle = container.querySelector('.aui-pane-resize') as HTMLButtonElement;
     fireEvent.touchStart(window, { touches: [{}] });
     fireEvent.touchStart(paneHandle);

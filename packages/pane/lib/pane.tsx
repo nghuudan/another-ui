@@ -8,12 +8,19 @@ import React, {
 export interface PaneProps {
   /** Children to render in the pane body */
   children?: ReactNode;
-  /** Optional class name for the pane body */
+  /** Optional class name for the pane */
   className?: string;
   /** Enables pane to be draggable by the header */
   draggable?: boolean;
   /** Sets the heading for the pane header */
   heading?: ReactNode;
+  /** Sets the initial position and size of the pane */
+  initial?: {
+    x?: number;
+    y?: number;
+    width?: number;
+    height?: number;
+  };
   /** Optional padding for the pane header and body */
   padding?: boolean;
   /** Enables pane to be resizable by the lower-right corner */
@@ -29,6 +36,7 @@ export const Pane = ({
   className,
   draggable,
   heading,
+  initial,
   padding,
   resizable,
   snapTo,
@@ -37,10 +45,13 @@ export const Pane = ({
   const ref = useRef<HTMLDivElement>(null);
   const cls = ['aui-pane'];
   const [offset, setOffset] = useState([0, 0]);
-  const [position, setPosition] = useState([0, 0]);
+  const [position, setPosition] = useState([
+    initial?.x || 0,
+    initial?.y || 0,
+  ]);
   const [size, setSize] = useState([
-    ref.current?.offsetWidth,
-    ref.current?.offsetHeight,
+    initial?.width || ref.current?.offsetWidth,
+    initial?.height || ref.current?.offsetHeight,
   ]);
   const [isDragging, setDragging] = useState(false);
   const [isResizing, setResizing] = useState(false);
@@ -84,6 +95,10 @@ export const Pane = ({
     let height = y - offsetTop + 8;
     if (width + offsetLeft > innerWidth) width = innerWidth - offsetLeft;
     if (height + offsetTop > innerHeight) height = innerHeight - offsetTop;
+    if (snapTo) {
+      width = Math.round(width / snapTo) * snapTo;
+      height = Math.round(height / snapTo) * snapTo;
+    }
     return [
       Math.max(48, width),
       Math.max(48, height),
