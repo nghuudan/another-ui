@@ -99,7 +99,7 @@ export const DarkTheme = () => {
   );
 };
 
-export const DrawerController = () => {
+const DrawerController = () => {
   const { open } = useDrawer();
   return (
     <>

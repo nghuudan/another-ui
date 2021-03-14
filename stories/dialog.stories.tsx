@@ -87,7 +87,7 @@ export const DarkTheme = () => {
   );
 };
 
-export const DialogController = () => {
+const DialogController = () => {
   const { show } = useDialog();
   return (
     <>
