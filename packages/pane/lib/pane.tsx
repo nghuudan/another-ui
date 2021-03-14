@@ -53,8 +53,15 @@ export const Pane = ({
     initial?.width || ref.current?.offsetWidth,
     initial?.height || ref.current?.offsetHeight,
   ]);
+  const [isCollapsed, setCollapsed] = useState(false);
   const [isDragging, setDragging] = useState(false);
   const [isResizing, setResizing] = useState(false);
+  const handleDoubleClick = () => setCollapsed(!isCollapsed);
+  const handleTouchEnd = (event: React.TouchEvent) => {
+    if (event.touches.length > 1) {
+      setCollapsed(!isCollapsed);
+    }
+  };
   const handleMouseDown = () => setDragging(true);
   const handleMouseDownResize = () => setResizing(true);
   const handleTouchStart = () => setDragging(true);
@@ -69,6 +76,7 @@ export const Pane = ({
   };
 
   if (className) cls.push(className);
+  if (isCollapsed) cls.push('aui-pane-collapsed');
   if (draggable) cls.push('aui-pane-draggable');
   if (padding) cls.push('aui-pane-padding');
   if (theme) cls.push(`aui-pane-theme-${theme}`);
@@ -160,7 +168,7 @@ export const Pane = ({
     left: `${position[0]}px`,
     top: `${position[1]}px`,
     width: size[0] ? `${size[0]}px` : 'auto',
-    height: size[1] ? `${size[1]}px` : 'auto',
+    height: !isCollapsed && size[1] ? `${size[1]}px` : 'auto',
   };
 
   return (
@@ -171,7 +179,9 @@ export const Pane = ({
             <button
               aria-hidden="true"
               className="aui-pane-handle"
+              onDoubleClick={handleDoubleClick}
               onMouseDown={handleMouseDown}
+              onTouchEnd={handleTouchEnd}
               onTouchStart={handleTouchStart}
               tabIndex={-1}
               type="button"

@@ -10,6 +10,12 @@
   overflow: hidden;
   position: relative;
 
+  &.aui-pane-collapsed {
+    .aui-pane-body {
+      display: none;
+    }
+  }
+
   &.aui-pane-draggable {
     left: auto;
     position: fixed;
@@ -42,8 +48,8 @@
     }
 
     .aui-pane-resize {
-      border-bottom: .5rem solid $aui-theme-dark-alt-bg-color;
-      border-right: .5rem solid $aui-theme-dark-alt-bg-color;
+      border-bottom: .5rem solid $aui-theme-dark-accent-color;
+      border-right: .5rem solid $aui-theme-dark-accent-color;
     }
   }
 }
@@ -63,7 +69,7 @@
   border: 0;
   box-sizing: border-box;
   color: inherit;
-  cursor: move;
+  cursor: grab;
   display: block;
   font-family: inherit;
   font-size: 1rem;
@@ -80,9 +86,9 @@
 
 .aui-pane-resize {
   background-color: transparent;
-  border-bottom: .5rem solid $aui-default-alt-bg-color;
+  border-bottom: .5rem solid $aui-default-accent-color;
   border-left: .5rem solid transparent;
-  border-right: .5rem solid $aui-default-alt-bg-color;
+  border-right: .5rem solid $aui-default-accent-color;
   border-top: .5rem solid transparent;
   bottom: 0;
   box-sizing: border-box;

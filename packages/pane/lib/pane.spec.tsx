@@ -60,6 +60,27 @@ describe('Pane', () => {
     });
   });
 
+  it('should toggle collapsed class name when pane handle is double-clicked', () => {
+    const { container } = render(<Pane draggable />);
+    const paneHandle = container.querySelector('.aui-pane-handle') as HTMLButtonElement;
+    fireEvent.doubleClick(paneHandle);
+    expect(container.firstChild).toHaveClass('aui-pane-collapsed');
+  });
+
+  it('should toggle collapsed class name on multi-touch end event for pane handle', () => {
+    const { container } = render(<Pane draggable />);
+    const paneHandle = container.querySelector('.aui-pane-handle') as HTMLButtonElement;
+    fireEvent.touchEnd(paneHandle, { touches: [1, 2] });
+    expect(container.firstChild).toHaveClass('aui-pane-collapsed');
+  });
+
+  it('should not toggle collapsed class name on single-touch end event for pane handle', () => {
+    const { container } = render(<Pane draggable />);
+    const paneHandle = container.querySelector('.aui-pane-handle') as HTMLButtonElement;
+    fireEvent.touchEnd(paneHandle, { touches: [1] });
+    expect(container.firstChild).not.toHaveClass('aui-pane-collapsed');
+  });
+
   // Cannot simulate trusted events
   it('should set styles for position with offset on mouse events', () => {
     const { container } = render(<Pane draggable />);
