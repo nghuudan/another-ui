@@ -57,11 +57,6 @@ export const Pane = ({
   const [isDragging, setDragging] = useState(false);
   const [isResizing, setResizing] = useState(false);
   const handleDoubleClick = () => setCollapsed(!isCollapsed);
-  const handleTouchEnd = (event: React.TouchEvent) => {
-    if (event.touches.length > 1) {
-      setCollapsed(!isCollapsed);
-    }
-  };
   const handleMouseDown = () => setDragging(true);
   const handleMouseDownResize = () => setResizing(true);
   const handleTouchStart = () => setDragging(true);
@@ -181,7 +176,6 @@ export const Pane = ({
               className="aui-pane-handle"
               onDoubleClick={handleDoubleClick}
               onMouseDown={handleMouseDown}
-              onTouchEnd={handleTouchEnd}
               onTouchStart={handleTouchStart}
               tabIndex={-1}
               type="button"
