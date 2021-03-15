@@ -3,10 +3,9 @@
 
 $column-bg-color: #ccc;
 $column-border-color: #999;
-$carousel-bg-color: #000;
+$carousel-bg-color: #339;
 $carousel-font-color: #fff;
 $carousel-border-color: #ccc;
-$slide-bg-color: #339;
 
 body {
   font-family: 'Open Sans', sans-serif;
@@ -73,7 +72,7 @@ body {
   border-radius: .5rem;
 
   .slide-example {
-    background-color: $slide-bg-color;
+    background-color: $carousel-bg-color;
     color: $carousel-font-color;
   }
 }

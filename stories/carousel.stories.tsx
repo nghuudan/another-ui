@@ -7,9 +7,9 @@ import {
 import styles from './stories.module.scss';
 import '../packages/carousel/lib/carousel.scss';
 
-export const SlideOne = () => <h1 className={styles['slide-example']}>Slide One</h1>;
-export const SlideTwo = () => <h1 className={styles['slide-example']}>Slide Two</h1>;
-export const SlideThree = () => <h1 className={styles['slide-example']}>Slide Three</h1>;
+const SlideOne = () => <h1 className={styles['slide-example']}>Slide One</h1>;
+const SlideTwo = () => <h1 className={styles['slide-example']}>Slide Two</h1>;
+const SlideThree = () => <h1 className={styles['slide-example']}>Slide Three</h1>;
 
 const CarouselController = () => {
   const {
