@@ -3,6 +3,10 @@
 
 $column-bg-color: #ccc;
 $column-border-color: #999;
+$carousel-bg-color: #000;
+$carousel-font-color: #fff;
+$carousel-border-color: #ccc;
+$slide-bg-color: #339;
 
 body {
   font-family: 'Open Sans', sans-serif;
@@ -44,4 +48,39 @@ body {
 .close-drawer-button {
   float: right;
   margin-left: 1rem;
+}
+
+.slide-example {
+  border-radius: .5rem;
+  font-size: 2.5rem;
+  font-weight: 300;
+  margin: 0;
+  padding: 5rem 1rem;
+  text-align: center;
+}
+
+.slide-button {
+  margin-right: 1rem;
+}
+
+.carousel-controller {
+  display: flex;
+  flex-direction: row;
+  margin-top: 1rem;
+}
+
+.carousel-example {
+  border-radius: .5rem;
+
+  .slide-example {
+    background-color: $slide-bg-color;
+    color: $carousel-font-color;
+  }
+}
+
+.carousel-frame {
+  border: .25rem solid $carousel-border-color;
+  border-radius: .5rem;
+  box-sizing: border-box;
+  overflow: hidden;
 }
