@@ -13,6 +13,8 @@ const SlideThree = () => <h1 className={styles['slide-example']}>Slide Three</h1
 
 const CarouselController = () => {
   const {
+    currentIndex,
+    setCurrentIndex,
     previous,
     next,
     PreviousSlide,
@@ -21,6 +23,14 @@ const CarouselController = () => {
 
   return (
     <div className={styles['carousel-controller']}>
+      <button
+        className={styles['slide-button']}
+        disabled={currentIndex === 0}
+        onClick={() => setCurrentIndex(0)}
+        type="button"
+      >
+        First
+      </button>
       <button
         className={styles['slide-button']}
         disabled={!PreviousSlide}
@@ -36,6 +46,14 @@ const CarouselController = () => {
         type="button"
       >
         Next
+      </button>
+      <button
+        className={styles['slide-button']}
+        disabled={currentIndex === 2}
+        onClick={() => setCurrentIndex(2)}
+        type="button"
+      >
+        Last
       </button>
     </div>
   );
