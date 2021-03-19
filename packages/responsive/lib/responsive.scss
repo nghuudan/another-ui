@@ -1,0 +1,78 @@
+@import '../../../styles/mixins';
+@import '../../../styles/variables';
+
+@each $size in $aui-breakpoint-sizes {
+  .aui-responsive-#{$size}-hide {
+    display: block;
+  }
+
+  .aui-responsive-#{$size}-show {
+    display: none;
+  }
+
+  .aui-responsive-#{$size}-only {
+    display: none;
+  }
+}
+
+@include aui-breakpoint($aui-breakpoint-sm) {
+  .aui-responsive-sm-hide {
+    display: none;
+  }
+
+  .aui-responsive-sm-show {
+    display: block;
+  }
+}
+
+@include aui-breakpoint($aui-breakpoint-md) {
+  .aui-responsive-md-hide {
+    display: none;
+  }
+
+  .aui-responsive-md-show {
+    display: block;
+  }
+}
+
+@include aui-breakpoint($aui-breakpoint-lg) {
+  .aui-responsive-lg-hide {
+    display: none;
+  }
+
+  .aui-responsive-lg-show {
+    display: block;
+  }
+}
+
+@include aui-breakpoint($aui-breakpoint-xl) {
+  .aui-responsive-xl-hide {
+    display: none;
+  }
+
+  .aui-responsive-xl-show {
+    display: block;
+  }
+
+  .aui-responsive-xl-only {
+    display: block;
+  }
+}
+
+@include aui-breakpoint-only(0, $aui-breakpoint-md) {
+  .aui-responsive-sm-only {
+    display: block;
+  }
+}
+
+@include aui-breakpoint-only($aui-breakpoint-md, $aui-breakpoint-lg) {
+  .aui-responsive-md-only {
+    display: block;
+  }
+}
+
+@include aui-breakpoint-only($aui-breakpoint-lg, $aui-breakpoint-xl) {
+  .aui-responsive-lg-only {
+    display: block;
+  }
+}
