@@ -1,6 +1,6 @@
 # `@another-ui/responsive`
 
-Just another responsive layout react component
+Just another responsive layout for React
 
 ## Usage
 
@@ -11,7 +11,7 @@ import '@another-ui/responsive/dist/responsive.css';
 
 export const Example = () => (
   <div>
-    <Responsive sm="hide">
+    <Responsive className="custom-class" sm="hide">
       <h1>Hide on Small Device or Larger</h1>
     </Responsive>
     <Responsive md="show">

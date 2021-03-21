@@ -1,7 +1,7 @@
 {
   "name": "@another-ui/responsive",
   "version": "0.18.0",
-  "description": "Just another responsive layout react component",
+  "description": "Just another responsive layout for React",
   "keywords": [
     "another",
     "ui",
