@@ -33,6 +33,11 @@ describe('Flex', () => {
     expect(container.firstChild).toHaveClass('aui-flex-grow');
   });
 
+  it('should have class name for inline', () => {
+    const { container } = render(<Flex inline />);
+    expect(container.firstChild).toHaveClass('aui-flex-inline');
+  });
+
   it('should have class name for justify', () => {
     const { container } = render(<Flex justify="center" />);
     expect(container.firstChild).toHaveClass('aui-flex-justify-center');

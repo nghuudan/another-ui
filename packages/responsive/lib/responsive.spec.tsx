@@ -13,6 +13,11 @@ describe('Responsive', () => {
     expect(container.firstChild).toHaveClass('test-class');
   });
 
+  it('should be span element when inline is true', () => {
+    const { container } = render(<Responsive inline />);
+    expect(container.firstChild).toHaveProperty('tagName', 'SPAN');
+  });
+
   it('should have the class name for sm hide', () => {
     const { container } = render(<Responsive sm="hide" />);
     expect(container.firstChild).toHaveClass('aui-responsive-sm-hide');

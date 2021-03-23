@@ -39,6 +39,25 @@ Grow.args = {
   justify: 'start',
 };
 
+export const Inline = ({ align, direction, justify }: FlexProps) => (
+  <Flex
+    align={align}
+    className={styles['flex-example']}
+    direction={direction}
+    inline
+    justify={justify}
+  >
+    <Flex basis={50} className={styles['flex-title']}>50%</Flex>
+    <Flex basis={50} className={styles['flex-title']}>50%</Flex>
+  </Flex>
+);
+
+Inline.args = {
+  align: 'stretch',
+  direction: 'row',
+  justify: 'start',
+};
+
 export const Shrink = ({ align, direction, justify }: FlexProps) => (
   <Flex
     align={align}

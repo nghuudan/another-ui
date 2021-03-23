@@ -13,6 +13,8 @@ export interface FlexProps {
   direction?: 'column' | 'row';
   /** Sets the flex component to grow to fill the flex parent */
   grow?: boolean;
+  /** Sets flex component to be an inline flex layout */
+  inline?: boolean;
   /** Sets justify content for the flex layout */
   justify?: 'around' | 'between' | 'center' | 'end' | 'evenly' | 'start';
   /** Sets the flex component to shrink to fit the flex parent */
@@ -28,6 +30,7 @@ export const Flex = ({
   className,
   direction,
   grow,
+  inline,
   justify,
   shrink,
   wrap,
@@ -38,6 +41,7 @@ export const Flex = ({
   if (basis) cls.push(`aui-flex-basis-${basis}`);
   if (direction) cls.push(`aui-flex-direction-${direction}`);
   if (grow) cls.push('aui-flex-grow');
+  if (inline) cls.push('aui-flex-inline');
   if (justify) cls.push(`aui-flex-justify-${justify}`);
   if (shrink) cls.push('aui-flex-shrink');
   if (wrap) cls.push('aui-flex-wrap');

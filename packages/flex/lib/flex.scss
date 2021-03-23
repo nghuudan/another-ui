@@ -6,6 +6,10 @@
     flex-grow: 1;
   }
 
+  &.aui-flex-inline {
+    display: inline-flex;
+  }
+
   &.aui-flex-shrink {
     flex-shrink: 1;
   }
@@ -45,6 +49,10 @@
 .aui-flex-direction-row {
   display: flex;
   flex-direction: row;
+
+  &.aui-flex-inline {
+    display: inline-flex;
+  }
 }
 
 .aui-flex-justify-around {

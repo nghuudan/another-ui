@@ -7,6 +7,8 @@ export interface ResponsiveProps {
   children?: ReactNode;
   /** Optional class name for the responsive component */
   className?: string;
+  /** Sets responsive component to be inline element */
+  inline?: boolean;
   /** Option to hide or show the content on small devices */
   sm?: ResponsiveOption;
   /** Option to hide or show the content on medium devices */
@@ -20,6 +22,7 @@ export interface ResponsiveProps {
 export const Responsive = ({
   children,
   className,
+  inline,
   sm,
   md,
   lg,
@@ -31,6 +34,7 @@ export const Responsive = ({
   if (md) cls.push(`aui-responsive-md-${md}`);
   if (lg) cls.push(`aui-responsive-lg-${lg}`);
   if (xl) cls.push(`aui-responsive-xl-${xl}`);
+  if (inline) return <span className={cls.join(' ')}>{children}</span>;
   return <div className={cls.join(' ')}>{children}</div>;
 };
 
