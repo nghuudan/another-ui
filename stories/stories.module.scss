@@ -6,6 +6,10 @@ $column-border-color: #999;
 $carousel-bg-color: #339;
 $carousel-font-color: #fff;
 $carousel-border-color: #ccc;
+$flex-example-bg-color: #ccc;
+$flex-bg-color: #333;
+$flex-border-color: #000;
+$flex-font-color: #fff;
 
 body {
   font-family: 'Open Sans', sans-serif;
@@ -96,4 +100,21 @@ body {
   font-weight: 300;
   line-height: 1.2;
   margin: 0;
+}
+
+.flex-example {
+  background-color: $flex-example-bg-color;
+  height: 400px;
+}
+
+.flex-title {
+  background-color: $flex-bg-color;
+  border: 1px solid $flex-border-color;
+  box-sizing: border-box;
+  color: $flex-font-color;
+  font-size: 1.2rem;
+  font-weight: 300;
+  line-height: 1.2;
+  margin: 0;
+  padding: 1rem;
 }
