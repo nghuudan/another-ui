@@ -3,35 +3,80 @@ import { Flex, FlexProps } from '../packages/flex/lib';
 import styles from './stories.module.scss';
 import '../packages/flex/lib/flex.scss';
 
-export const Basis = () => (
-  <Flex className={styles['flex-example']} direction="row">
+export const Basis = ({ align, direction, justify }: FlexProps) => (
+  <Flex
+    align={align}
+    className={styles['flex-example']}
+    direction={direction}
+    justify={justify}
+  >
     <Flex basis={50} className={styles['flex-title']}>50%</Flex>
     <Flex basis={50} className={styles['flex-title']}>50%</Flex>
   </Flex>
 );
 
-export const Grow = () => (
-  <Flex className={styles['flex-example']} direction="row">
+Basis.args = {
+  align: 'stretch',
+  direction: 'row',
+  justify: 'start',
+};
+
+export const Grow = ({ align, direction, justify }: FlexProps) => (
+  <Flex
+    align={align}
+    className={styles['flex-example']}
+    direction={direction}
+    justify={justify}
+  >
     <Flex basis={50} className={styles['flex-title']} grow>50% and Grow</Flex>
     <Flex basis={25} className={styles['flex-title']}>25%</Flex>
   </Flex>
 );
 
-export const Shrink = () => (
-  <Flex className={styles['flex-example']} direction="row">
+Grow.args = {
+  align: 'stretch',
+  direction: 'row',
+  justify: 'start',
+};
+
+export const Shrink = ({ align, direction, justify }: FlexProps) => (
+  <Flex
+    align={align}
+    className={styles['flex-example']}
+    direction={direction}
+    justify={justify}
+  >
     <Flex basis={100} className={styles['flex-title']} shrink>100% and Shrink</Flex>
     <Flex basis={25} className={styles['flex-title']}>25%</Flex>
     <Flex basis={25} className={styles['flex-title']}>25%</Flex>
   </Flex>
 );
 
-export const Wrap = () => (
-  <Flex className={styles['flex-example']} direction="row" wrap>
+Shrink.args = {
+  align: 'stretch',
+  direction: 'row',
+  justify: 'start',
+};
+
+export const Wrap = ({ align, direction, justify }: FlexProps) => (
+  <Flex
+    align={align}
+    className={styles['flex-example']}
+    direction={direction}
+    justify={justify}
+    wrap
+  >
     <Flex basis={100} className={styles['flex-title']}>100%</Flex>
     <Flex basis={25} className={styles['flex-title']}>25%</Flex>
     <Flex basis={25} className={styles['flex-title']}>25%</Flex>
   </Flex>
 );
+
+Wrap.args = {
+  align: 'stretch',
+  direction: 'row',
+  justify: 'start',
+};
 
 export const TryItOut = ({
   align,

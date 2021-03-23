@@ -23,8 +23,7 @@ export const Example = () => (
       justify="start"
       shrink
     >
-      <Flex basis={75} grow>Flex</Flex>
-      <Flex basis={25} shrink>Flex</Flex>
+      <Flex basis={50} grow>Flex</Flex>
       <Flex basis={25} shrink>Flex</Flex>
     </Flex>
   </Flex>

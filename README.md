@@ -12,5 +12,6 @@ Just another library for React components
 - [Pane](./packages/pane)
 
 ### Layout
+- [Flex](./packages/flex)
 - [Grid](./packages/grid)
 - [Responsive](./packages/responsive)
