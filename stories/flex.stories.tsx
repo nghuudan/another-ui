@@ -100,12 +100,14 @@ Wrap.args = {
 export const TryItOut = ({
   align,
   direction,
+  inline,
   justify,
 }: FlexProps) => (
   <Flex
     align={align}
     className={styles['flex-example']}
     direction={direction}
+    inline={inline}
     justify={justify}
   >
     <Flex className={styles['flex-title']}>Flex</Flex>
@@ -117,6 +119,7 @@ export const TryItOut = ({
 TryItOut.args = {
   align: 'start',
   direction: 'column',
+  inline: false,
   justify: 'start',
 };
 

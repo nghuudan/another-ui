@@ -30,6 +30,7 @@ export const Responsive = ({
 }: ResponsiveProps) => {
   const cls = ['aui-responsive'];
   if (className) cls.push(className);
+  if (inline) cls.push('aui-responsive-inline');
   if (sm) cls.push(`aui-responsive-sm-${sm}`);
   if (md) cls.push(`aui-responsive-md-${md}`);
   if (lg) cls.push(`aui-responsive-lg-${lg}`);

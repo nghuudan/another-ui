@@ -23,6 +23,26 @@ export const HideAndShow = () => (
   </>
 );
 
+export const HideAndShowInline = () => (
+  <>
+    <Responsive inline sm="show" md="hide" lg="show" xl="hide">
+      <span className={styles['responsive-title']}>Responsive Inline </span>
+    </Responsive>
+    <Responsive inline sm="only">
+      <span className={styles['responsive-option']}>Show on Small Device</span>
+    </Responsive>
+    <Responsive inline md="only">
+      <span className={styles['responsive-option']}>Hide on Medium Device</span>
+    </Responsive>
+    <Responsive inline lg="only">
+      <span className={styles['responsive-option']}>Show on Large Device</span>
+    </Responsive>
+    <Responsive inline xl="only">
+      <span className={styles['responsive-option']}>Hide on Extra Large Device</span>
+    </Responsive>
+  </>
+);
+
 export const ShowOnly = () => (
   <>
     <Responsive sm="only">
